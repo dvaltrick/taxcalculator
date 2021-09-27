@@ -1,0 +1,38 @@
+﻿@page
+@model taxcalculator.Pages.ProgressiveTables.ProgressiveTableModel
+
+@{
+    ViewData["Title"] = "Progressive Table";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgressiveTable[0].Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgressiveTable[0].ValueFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProgressiveTable[0].ValueTo)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ProgressiveTable) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueFrom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValueTo)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,50 @@
+﻿@page
+@model taxcalculator.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">New Calc</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Calc[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calc[0].InValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calc[0].OutValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calc[0].calculatedAt)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Calc) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type.PostalCode)
+            </td>
+            <td style="text-align:right">
+                @Html.DisplayFor(modelItem => item.InValue)
+            </td>
+            <td style="text-align:right">
+                @Html.DisplayFor(modelItem => item.OutValue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.calculatedAt)
+            </td>
+            <td>
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

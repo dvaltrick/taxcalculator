@@ -1,0 +1,31 @@
+﻿@page
+@model taxcalculator.Pages.TaxTypes.TaxTypesModel
+
+@{
+    ViewData["Title"] = "Tax Types";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxType[0].PostalCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TaxType[0].CalcType)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TaxType) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PostalCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalcType)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
